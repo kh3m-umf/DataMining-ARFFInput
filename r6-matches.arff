@@ -1,0 +1,58 @@
+% Kim C. Hem
+% September 2020
+% COS 277 - Intro to Data Mining
+%
+
+% Title: Rainbow Six Siege 2020 Invitational Matches
+%
+% Source: SiegeGG
+%
+% Past Usage:
+%
+% Revelant Info: Team stats based around their qualifing tournament prior to the Feb 2020 Invitational
+%
+% Number of Instances
+%
+% Number of Attribute
+%
+% Attribute Info
+%
+% Missing Attribute:
+%
+% Class Distribution:
+% 
+% Exceptions from format instructions:
+%
+
+@RELATION r6-matches
+
+@ATTRIBUTE 't1-region' {'EU','NA','LATAM','APAC'}
+@ATTRIBUTE 't1-qualifierLAN?' {'true','false'}
+@ATTRIBUTE 't1-avg-rating' real
+@ATTRIBUTE 't1-avg-K-D' real
+@ATTRIBUTE 't1-maps-played' real
+@ATTRIBUTE 't1-avg-KOST' real
+@ATTRIBUTE 't1-avg-KPR' real
+@ATTRIBUTE 't1-avg-SRV' real
+@ATTRIBUTE 't1-total-1vX' real
+@ATTRIBUTE 't1-total-plants' real
+@ATTRIBUTE 't1-total-disables' real
+@ATTRIBUTE 't1-avg-HS%' real 
+
+@ATTRIBUTE 't2-region' {'EU','NA','LATAM','APAC'}
+@ATTRIBUTE 't2-qualifierLAN?' {'true','false'}
+@ATTRIBUTE 't2-avg-rating' real
+@ATTRIBUTE 't2-avg-K-D' real
+@ATTRIBUTE 't2-maps-played' real
+@ATTRIBUTE 't2-avg-KOST' real
+@ATTRIBUTE 't2-avg-KPR' real
+@ATTRIBUTE 't2-avg-SRV' real
+@ATTRIBUTE 't2-total-1vX' real
+@ATTRIBUTE 't2-total-plants' real
+@ATTRIBUTE 't2-total-disables' real
+@ATTRIBUTE 't2-avg-HS%' real 
+
+@ATTRIBUTE 'bestof' {'three','five'}
+@ATTRIBUTE 't1-outcome' {'win','loss'}
+
+@DATA
