@@ -3,56 +3,125 @@
 % COS 277 - Intro to Data Mining
 %
 
-% Title: Rainbow Six Siege 2020 Invitational Matches
+% Title: Rainbow Six Siege 2020 Invitational Playoff Matches
 %
 % Source: SiegeGG
 %
-% Past Usage:
-%
 % Revelant Info: Team stats based around their qualifing tournament prior to the Feb 2020 Invitational
 %
-% Number of Instances
+% Number of Instances: 28
 %
-% Number of Attribute
+% Number of Attribute: 28
 %
-% Attribute Info
-%
-% Missing Attribute:
-%
-% Class Distribution:
-% 
-% Exceptions from format instructions:
+% Attribute Description:
+%	- Rating: SiegeGG player ranking
+%	- K-D: Kills minus Deaths
+%	- Entry: Opening Kills minus Deaths
+%	- Maps played: # of Maps played during qualifying tournament
+% 	- KOST: Percentage of rounds a player did 1 of any: kill, plant, defuse, survive, or was traded after death
+%	- KPR: Kills per round
+%	- SRV: Percentage of rounds survived
+%	- 1vX: # of wins in clutch situations
+%	- Plants: Total defuser planted
+%	- Disables: Total defuser disabled
+% 	- HS Percent: Headshot percentage
 %
 
 @RELATION r6-matches
 
-@ATTRIBUTE 't1-region' {'EU','NA','LATAM','APAC'}
-@ATTRIBUTE 't1-qualifierLAN?' {'true','false'}
-@ATTRIBUTE 't1-avg-rating' real
-@ATTRIBUTE 't1-avg-K-D' real
-@ATTRIBUTE 't1-maps-played' real
-@ATTRIBUTE 't1-avg-KOST' real
-@ATTRIBUTE 't1-avg-KPR' real
-@ATTRIBUTE 't1-avg-SRV' real
-@ATTRIBUTE 't1-total-1vX' real
-@ATTRIBUTE 't1-total-plants' real
-@ATTRIBUTE 't1-total-disables' real
-@ATTRIBUTE 't1-avg-HS%' real 
+@ATTRIBUTE t1-region {EU,NA,LATAM,APAC}
+@ATTRIBUTE t1-qualifierLAN? {true,false}
+@ATTRIBUTE t1-avg-rating real
+@ATTRIBUTE t1-avg-K-D real
+@ATTRIBUTE t1-avg-entry real
+@ATTRIBUTE t1-maps-played real
+@ATTRIBUTE t1-avg-KOST real
+@ATTRIBUTE t1-avg-KPR real
+@ATTRIBUTE t1-avg-SRV real
+@ATTRIBUTE t1-total-1vX real
+@ATTRIBUTE t1-total-plants real
+@ATTRIBUTE t1-total-disables real
+@ATTRIBUTE t1-avg-HS-perc real 
+@ATTRIBUTE t2-region {EU,NA,LATAM,APAC}
+@ATTRIBUTE t2-qualifierLAN? {true,false}
+@ATTRIBUTE t2-avg-rating real
+@ATTRIBUTE t2-avg-K-D real
+@ATTRIBUTE t2-avg-entry real
+@ATTRIBUTE t2-maps-played real
+@ATTRIBUTE t2-avg-KOST real
+@ATTRIBUTE t2-avg-KPR real
+@ATTRIBUTE t2-avg-SRV real
+@ATTRIBUTE t2-total-1vX real
+@ATTRIBUTE t2-total-plants real
+@ATTRIBUTE t2-total-disables real
+@ATTRIBUTE t2-avg-HS-perc real 
+@ATTRIBUTE bestof {three,five}
+@ATTRIBUTE t1-outcome {win,loss}
 
-@ATTRIBUTE 't2-region' {'EU','NA','LATAM','APAC'}
-@ATTRIBUTE 't2-qualifierLAN?' {'true','false'}
-@ATTRIBUTE 't2-avg-rating' real
-@ATTRIBUTE 't2-avg-K-D' real
-@ATTRIBUTE 't2-maps-played' real
-@ATTRIBUTE 't2-avg-KOST' real
-@ATTRIBUTE 't2-avg-KPR' real
-@ATTRIBUTE 't2-avg-SRV' real
-@ATTRIBUTE 't2-total-1vX' real
-@ATTRIBUTE 't2-total-plants' real
-@ATTRIBUTE 't2-total-disables' real
-@ATTRIBUTE 't2-avg-HS%' real 
 
-@ATTRIBUTE 'bestof' {'three','five'}
-@ATTRIBUTE 't1-outcome' {'win','loss'}
 
 @DATA
+LATAM,true,0.802,-5.8,-1.6,2,0.536,0.572,0.186,3,2,0,0.578,NA,true,1.066,12.8,1.8,13,0.644,0.75,0.34,13,18,3,0.512,three,loss
+NA,true,1.066,12.8,1.8,13,0.644,0.75,0.34,13,18,3,0.512,LATAM,true,0.802,-5.8,-1.6,2,0.536,0.572,0.186,3,2,0,0.578,three,win
+EU,true,1.024,6,0.6,10,0.652,0.748,0.302,9,15,1,0.562,APAC,true,1.084,4.8,0,4,0.676,0.722,0.38,5,4,3,0.434,three,loss
+APAC,true,1.084,4.8,0,4,0.676,0.722,0.38,5,4,3,0.434,EU,true,1.024,6,0.6,10,0.652,0.748,0.302,9,15,1,0.562,three,win
+NA,true,1.168,22.6,1.2,12,0.71,0.79,0.404,9,16,2,0.434,LATAM,false,1.108,15.4,-1.6,11,0.692,0.776,0.356,8,18,0,0.484,three,win
+LATAM,false,1.108,15.4,-1.6,11,0.692,0.776,0.356,8,18,0,0.484,NA,true,1.168,22.6,1.2,12,0.71,0.79,0.404,9,16,2,0.434,three,loss
+NA,true,1.094,5.6,0.8,6,0.688,0.746,0.342,4,9,4,0.418,EU,true,1.082,17.6,0.2,16,0.658,0.774,0.334,14,25,3,0.468,three,win
+EU,true,1.082,17.6,0.2,16,0.658,0.774,0.334,14,25,3,0.468,NA,true,1.094,5.6,0.8,6,0.688,0.746,0.342,4,9,4,0.418,three,loss
+NA,true,1.066,12.8,1.8,13,0.644,0.75,0.34,13,18,3,0.512,APAC,true,1.084,4.8,0,4,0.676,0.722,0.38,5,4,3,0.434,three,win
+APAC,true,1.084,4.8,0,4,0.676,0.722,0.38,5,4,3,0.434,NA,true,1.066,12.8,1.8,13,0.644,0.75,0.34,13,18,3,0.512,three,loss
+NA,true,1.168,22.6,1.2,12,0.71,0.79,0.404,9,16,2,0.434,NA,true,1.094,5.6,0.8,6,0.688,0.746,0.342,4,9,4,0.418,three,win
+NA,true,1.094,5.6,0.8,6,0.688,0.746,0.342,4,9,4,0.418,NA,true,1.168,22.6,1.2,12,0.71,0.79,0.404,9,16,2,0.434,three,loss
+NA,true,1.066,12.8,1.8,13,0.644,0.75,0.34,13,18,3,0.512,NA,true,1.168,22.6,1.2,12,0.71,0.79,0.404,9,16,2,0.434,three,loss
+NA,true,1.168,22.6,1.2,12,0.71,0.79,0.404,9,16,2,0.434,NA,true,1.066,12.8,1.8,13,0.644,0.75,0.34,13,18,3,0.512,three,win
+LATAM,true,0.802,-5.8,-1.6,2,0.536,0.572,0.186,3,2,0,0.578,EU,true,1.024,6,0.6,10,0.652,0.748,0.302,9,15,1,0.562,three,win
+EU,true,1.024,6,0.6,10,0.652,0.748,0.302,9,15,1,0.562,LATAM,true,0.802,-5.8,-1.6,2,0.536,0.572,0.186,3,2,0,0.578,three,loss
+LATAM,false,1.108,15.4,-1.6,11,0.692,0.776,0.356,8,18,0,0.484,EU,true,1.082,17.6,0.2,16,0.658,0.774,0.334,14,25,3,0.468,three,loss
+EU,true,1.082,17.6,0.2,16,0.658,0.774,0.334,14,25,3,0.468,LATAM,false,1.108,15.4,-1.6,11,0.692,0.776,0.356,8,18,0,0.484,three,win
+NA,true,1.094,5.6,0.8,6,0.688,0.746,0.342,4,9,4,0.418,LATAM,true,0.802,-5.8,-1.6,2,0.536,0.572,0.186,3,2,0,0.578,three,loss
+LATAM,true,0.802,-5.8,-1.6,2,0.536,0.572,0.186,3,2,0,0.578,NA,true,1.094,5.6,0.8,6,0.688,0.746,0.342,4,9,4,0.418,three,win
+APAC,true,1.084,4.8,0,4,0.676,0.722,0.38,5,4,3,0.434,EU,true,1.082,17.6,0.2,16,0.658,0.774,0.334,14,25,3,0.468,three,loss
+EU,true,1.082,17.6,0.2,16,0.658,0.774,0.334,14,25,3,0.468,APAC,true,1.084,4.8,0,4,0.676,0.722,0.38,5,4,3,0.434,three,win
+LATAM,true,0.802,-5.8,-1.6,2,0.536,0.572,0.186,3,2,0,0.578,EU,true,1.082,17.6,0.2,16,0.658,0.774,0.334,14,25,3,0.468,three,win
+EU,true,1.082,17.6,0.2,16,0.658,0.774,0.334,14,25,3,0.468,LATAM,true,0.802,-5.8,-1.6,2,0.536,0.572,0.186,3,2,0,0.578,three,loss
+NA,true,1.066,12.8,1.8,13,0.644,0.75,0.34,13,18,3,0.512,LATAM,true,0.802,-5.8,-1.6,2,0.536,0.572,0.186,3,2,0,0.578,three,loss
+LATAM,true,0.802,-5.8,-1.6,2,0.536,0.572,0.186,3,2,0,0.578,NA,true,1.066,12.8,1.8,13,0.644,0.75,0.34,13,18,3,0.512,three,win
+NA,true,1.168,22.6,1.2,12,0.71,0.79,0.404,9,16,2,0.434,LATAM,true,0.802,-5.8,-1.6,2,0.536,0.572,0.186,3,2,0,0.578,five,win
+LATAM,true,0.802,-5.8,-1.6,2,0.536,0.572,0.186,3,2,0,0.578,NA,true,1.168,22.6,1.2,12,0.71,0.79,0.404,9,16,2,0.434,five,loss
+
+% Team Data - 
+% DZ - NA,true,1.094,5.6,0.8,6,0.688,0.746,0.342,4,9,4,0.418
+% Fn - APAC,true,1.084,4.8,0,4,0.676,0.722,0.38,5,4,3,0.434
+% SSG - NA,true,1.168,22.6,1.2,12,0.71,0.79,0.404,9,16,2,0.434
+% TSM - NA,true,1.066,12.8,1.8,13,0.644,0.75,0.34,13,18,3,0.512
+% NIP - LATAM,true,0.802,-5.8,-1.6,2,0.536,0.572,0.186,3,2,0,0.578
+% MIBR - LATAM,false,1.108,15.4,-1.6,11,0.692,0.776,0.356,8,18,0,0.484
+% G2 - EU,true,1.024,6,0.6,10,0.652,0.748,0.302,9,15,1,0.562
+% BDS - EU,true,1.082,17.6,0.2,16,0.658,0.774,0.334,14,25,3,0.468
+
+
+% Matchup -
+% -Quaterfinals-
+% NIP v TSM.
+% G2 v Fn.
+% SSG v MIBR.
+% DZ v BDS.
+% -Semifinals-
+% TSM v Fn.
+% SSG v DZ.
+% -UpperBracket Final-
+% TSM v SSG.
+% -LowerBracket1-
+% NIP v G2.
+% MIBR v BDS.
+% -LB2-
+% DZ v NIP.
+% Fn v BDS.
+% -LB3-
+% NIP v BDS.
+% -LB Final-
+% TSM v NIP.
+
+% -Grand Final-
+% SSG v NIP
